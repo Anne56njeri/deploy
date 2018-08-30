@@ -58,7 +58,7 @@ return [
         'pgsql' => [
             'driver' => 'pgsql',
             'host' => "amazonaws.com",
-            'port' => $DATABASE_URL["port"],
+            'port' => "5432",
             'database' => ltrim($DATABASE_URL["path"], "/"),
             'username' => $DATABASE_URL["user"],
             'password' => $DATABASE_URL["pass"],
