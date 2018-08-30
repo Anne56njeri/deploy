@@ -1,6 +1,6 @@
 <?php
-$DATABASE_URL = parse_url(' postgres://psamhwpqbulpaa:ce492976d6185a1ada0656afb5325f3f0545388f12e634e8447834a1351c5bd5@ec2-54-83-51-78.compute-1.amazonaws.com:5432/d2f32g94dukarv
-');
+$DATABASE_URL=parse_url(' postgres://psamhwpqbulpaa:ce492976d6185a1ada0656afb5325f3f0545388f12e634e8447834a1351c5bd5@ec2-54-83-51-78.compute-1.amazonaws.com:5432/d2f32g94dukarv');
+
 return [
 
     /*
@@ -56,17 +56,17 @@ return [
         ],
 
         'pgsql' => [
-            'driver' => 'pgsql',
-            'host' => "@ec2-54-83-51-78.compute-1.amazonaws.com",
-            'port' => "5432",
-            'database' => ltrim($DATABASE_URL["path"], "/"),
-            'username' => "psamhwpqbulpaa",
-            'password' => "psamhwpqbulpaa:ce492976d6185a1ada0656afb5325f3f0545388f12e634e8447834a1351c5bd5",
-            'charset' => 'utf8',
-            'prefix' => '',
-            'schema' => 'public',
-            'sslmode' => 'require',
-        ],
+           'driver' => 'pgsql',
+           'host' => $DATABASE_URL["host"],
+           'port' => $DATABASE_URL["port"],
+           'database' => ltrim($DATABASE_URL["path"], "/"),
+           'username' => $DATABASE_URL["user"],
+           'password' => $DATABASE_URL["pass"],
+           'charset' => 'utf8',
+           'prefix' => '',
+           'schema' => 'public',
+           'sslmode' => 'require',
+       ],
 
         'sqlsrv' => [
             'driver' => 'sqlsrv',
