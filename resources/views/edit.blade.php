@@ -13,61 +13,32 @@
           @endif
 
           <div class="panel-body">
-            <form class="form-horizontal" method="POST" action="{{route ('stage.store') }}">
-              {{ csrf_field() }}
-
-              <div class="form-group">
-                <label for="name" class="col-md-4 control-label">Name</label>
-
-                <div class="col-md-6">
-                  <input name="name" type="text" class="form-control" value="{{$proposalform->name}}">
-
-
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="name" class="col-md-4 control-label">Phone Number</label>
-
-                <div class="col-md-6">
-                  <input type="text" class="form-control" name="number" value="{{$proposalform->number}}">
-
-
-
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="proposal" class="col-md-4 control-label">Proposal</label>
-
-                <div class="col-md-6">
-                  <input type="test" class="form-control" name="Proposal" value=" {{$proposalform->Proposal}}">
-
-
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="date" class="col-md-4 control-label">Date</label>
-
-                <div class="col-md-6">
-                  <input  type="date" class="form-control" name="date" value="{{$proposalform->date}} ">
-
-
-                </div>
-              </div>
+            @if(Session::has('flash_message'))
+      <div class="alert alert-success">
+          {{ Session::get('flash_message') }}
+      </div>
+  @endif
 
 
 
 
-
-              <div class="form-group">
-                <div class="col-md-6 col-md-offset-4">
-                  <button type="submit" class="btn btn-success">
-                    Confirm
-                  </button>
-                </div>
-              </div>
-            </form>
+<form method="post" action="{{action('ProposalformController@update', $id)}}">
+  @csrf
+  <input name="_method" type="hidden" value="PATCH">
+          <div class="row">
+            <div class="col-md-12"></div>
+            <div class="form-group col-md-4">
+              <label for="name">Status:</label>
+              <input type="text" class="form-control" name="status" value="{{$proposalform->Status}}">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12"></div>
+            <div class="form-group col-md-12" style="margin-top:10px">
+              <button type="submit" class="btn btn-success">Update</button>
+            </div>
+          </div>
+          </form>
           </div>
         </div>
       </div>

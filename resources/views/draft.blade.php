@@ -52,7 +52,6 @@ body {
 a {
     text-decoration: none;
     color: #3498db;
-    font-size:15px;
 }
     a:hover {
         color: #2980b9;
@@ -284,8 +283,8 @@ h2 {
         .
       }
       .active{
-        background-color: white;
-    	color: black;
+        background-color: grey;
+    	color: #fff;
       }
       .one {
         border-bottom: 4px solid steelblue ;
@@ -297,14 +296,10 @@ h2 {
   <div id="app">
       <nav class="navbar navbar-expand-md navbar-light navbar-laravel" style="background-color:">
           <div class="container">
-              <a class="navbar-brand" href="{{ url('/') }}" style=" font-size:20px;">
+              <a class="navbar-brand" href="{{ url('/') }}" style=" ">
                 Home
               </a>
               <a href="{{ url('/proposal/create') }}" class="nav-link active " style="font-size:15px; color:;">Add Proposal<span class="sr-only">(current)</span></a>
-                    <a href="{{ url('/stage') }}" class="nav-link active " style="font-size:15px; color:;">Submitted Proposal<span class="sr-only"></span></a>
-                          <a href="{{ url('/stageone') }}" class="nav-link active " style="font-size:15px; color:;">Stage One<span class="sr-only">(current)</span></a>
-                                <a href="{{ url('/stagetwo') }}" class="nav-link active " style="font-size:15px; color:;">Stage Two<span class="sr-only">(current)</span></a>
-                                <a href="{{ url('/all') }}" class="nav-link active " style="font-size:15px; color:;">Accepted<span class="sr-only">(current)</span></a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                   <span class="navbar-toggler-icon"></span>
               </button>
@@ -352,70 +347,69 @@ h2 {
       <main class="py-4">
           @yield('content')
       </main>
-<div class="jumbotron" style="background-image:url(/images/front.jpg);height:400px;background-repeat: no-repeat;background-position:center ;  background-size: cover;">
-  <center><h2  style="color:white;font-size:30px;">Proposal Management System</h2></center>
-<center><button class="button" style=""><span>StageTwo</span></button><center>
-</div>
-<div class="container">
-    <div class="row ">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">Admin Dashboard</div>
-
-
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container">
-  @if (\Session::has('success'))
-  <div class="alert alert-success">
-    <p>{{\Session::get('success')}}</p>
   </div>
-  <br>
-  @endif
+  <div class="jumbotron" style="background-image:url(/images/front.jpg);height:400px;background-repeat: no-repeat;background-position:center ;  background-size: cover;">
+    <center><h2  style="color:white;">Proposal Management System</h2></center>
+  <center><button class="button" style=""><span>Available Draft</span></button><center>
+  </div>
+  <div class="container">
 
-
-
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Date</th>
-
-        <th>Phone Number</th>
-        <th>Proposal</th>
-        <th colspan="2">Action</th>
-      </tr>
-    </thead>
-    <tbody>
-
+<div class="row">
 @foreach($proposalform as $proposal)
+   <div class="col-md-4 col-sm-6 col-x6-12">
 
-      <tr>
-        <td>{{$proposal->id}}</td>
-        <td>{{$proposal->name}}</td>
+ <div class="wrapper">
+
+            <div class="card radius shadowDepth1">
+                <div class="card__image border-tlr-radius">
+                    <img src="http://lorempixel.com/400/200/sports/" alt="image" class="border-tlr-radius">
+                </div>
+
+                <div class="card__content card__padding">
+                    <div class="card__share">
+                        <div class="card__social">
+                            <a class="share-icon facebook" href="#"><span class="fa fa-facebook"></span></a>
+                            <a class="share-icon twitter" href="#"><span class="fa fa-twitter"></span></a>
+                            <a class="share-icon googleplus" href="#"><span class="fa fa-google-plus"></span></a>
+                        </div>
+
+                        <a id="share" class="share-toggle share-icon" href="#"></a>
+                    </div>
+
+                    <div class="card__meta">
+                        <a href="#">Proposal</a>
+                        <time>17th March</time>
+                    </div>
 
 
-        <td>{{$proposal->number}}</td>
-        <td>{{$proposal->Proposal}}</td>
+                    <article class="card__article">
+                        <h2><a href="#">Proposal</a></h2>
 
-        <td>
-        <a href="{{ route('proposal.edit',$proposal->id)}} " class="btn btn-warning">Accept</a>
-        </td>
-        <td>
-            <form action="{{route ('proposal.destroy',$proposal->id)}} " method="post">
-              @csrf
-              <input name="_method" type="hidden" value="DELETE">
-              <button class="btn btn-danger" type="submit">Reject</button>
-            </form>
-          </td>
-      </tr>
-@endforeach
-      </tbody>
-    </table>
+                        <p>{{$proposal ->Proposal}}</p>
+                        <p>{{$proposal ->date}}</p>
+                    </article>
+                </div>
 
-</div>
-</body>
-</html>
+                <div class="card__action">
+
+                    <div class="card__author">
+                        <img src="http://lorempixel.com/40/40/sports/" alt="user">
+                        <div class="card__author-content">
+                            <p>By{{$proposal ->name}}</p>
+                            <a href="{{ route('proposal.edit',$proposal->id)}} " class="btn btn-warning">Submit</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+      </div>
+      @endforeach
+
+    </div>
+    </div>
+      </body>
+      </html>

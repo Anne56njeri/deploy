@@ -51,10 +51,10 @@ body {
 
 a {
     text-decoration: none;
-    color: #3498db;
+    color: black;
 }
     a:hover {
-        color: #2980b9;
+        color: black;
     }
 
 h2 {
@@ -283,8 +283,8 @@ h2 {
         .
       }
       .active{
-        background-color: grey;
-    	color: #fff;
+        background-color: white;
+    	color: black;
       }
       .one {
         border-bottom: 4px solid steelblue ;
@@ -300,6 +300,10 @@ h2 {
                 Home
               </a>
               <a href="{{ url('/proposal/create') }}" class="nav-link active " style="font-size:15px; color:;">Add Proposal<span class="sr-only">(current)</span></a>
+              <a href="{{ url('/stage') }}" class="nav-link active " style="font-size:15px; color:;">Submitted Proposal<span class="sr-only"></span></a>
+                    <a href="{{ url('/stageone') }}" class="nav-link active " style="font-size:15px; color:;">Stage One<span class="sr-only">(current)</span></a>
+                          <a href="{{ url('/stagetwo') }}" class="nav-link active " style="font-size:15px; color:;">Stage Two<span class="sr-only">(current)</span></a>
+                          <a href="{{ url('/all') }}" class="nav-link active " style="font-size:15px; color:;">Accepted<span class="sr-only">(current)</span></a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                   <span class="navbar-toggler-icon"></span>
               </button>
@@ -349,13 +353,14 @@ h2 {
       </main>
   </div>
   <div class="jumbotron" style="background-image:url(/images/front.jpg);height:400px;background-repeat: no-repeat;background-position:center ;  background-size: cover;">
-    <center><h2  style="color:white;">Proposal Management System</h2></center>
+    <center><h2  style="color:white;font-size:30px;">Proposal Management System</h2></center>
   <center><button class="button" style=""><span>All Proposal</span></button><center>
   </div>
+
   <div class="container">
 
 <div class="row">
-@foreach ($stage as $sta)
+@foreach($proposalform as $proposal)
    <div class="col-md-4 col-sm-6 col-x6-12">
 
  <div class="wrapper">
@@ -385,17 +390,19 @@ h2 {
                     <article class="card__article">
                         <h2><a href="#">Proposal</a></h2>
 
-                        <p>{{$sta ->Proposal}}</p>
-                        <p>{{$sta ->date}}</p>
+                        <p>{{$proposal ->Proposal}}</p>
+                        <p>{{$proposal ->date}}</p>
                     </article>
                 </div>
+
+
 
                 <div class="card__action">
 
                     <div class="card__author">
                         <img src="http://lorempixel.com/40/40/sports/" alt="user">
                         <div class="card__author-content">
-                            <p>By{{$sta ->name}}</p>
+                            <p>By{{$proposal ->name}}</p>
 
                         </div>
                     </div>
@@ -406,8 +413,9 @@ h2 {
         </div>
 
       </div>
-      @endforeach
+@endforeach
     </div>
     </div>
+
       </body>
       </html>

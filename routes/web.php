@@ -18,18 +18,28 @@ Route::get('/', function () {
 Route::resource('stage','StageController');
 
 Route::get('/stagetwo',function(){
-  $stage=DB::table('stages')->get();
-  return view('stagetwo')->withstage($stage);
+  $proposalform=DB::table('proposalforms')->where('Status','StageTwo')->get();
+  return view('stagetwo')->withproposalform($proposalform);
 });
 
+
+Route::get('/draft',function(){
+  $proposalform=DB::table('proposalforms')->where('Status','Draft')->get();
+  return view('draft')->withproposalform($proposalform);
+});
 Route::get('/stage',function(){
-  $proposalform=DB::table('proposalforms')->get();
+  $proposalform=DB::table('proposalforms')->where('Status','Submit')->get();
   return view('stage')->withproposalform($proposalform);
 });
-Route::get('/all',function(){
-  $stage=DB::table('stages')->get();
-  return view('all')->withstage($stage);
+Route::get('/stageone',function(){
+  $proposalform=DB::table('proposalforms')->where('Status','StageOne')->get();
+  return view('one')->withproposalform($proposalform);
 });
+Route::get('/all',function(){
+  $proposalform=DB::table('proposalforms')->where('Status','Accepted')->get();
+  return view('all')->withproposalform($proposalform);
+});
+
 Route::resource('proposal','ProposalformController');
 Auth::routes();
 Route::get('admin', 'AdminController@admin')

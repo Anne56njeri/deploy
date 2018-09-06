@@ -28,7 +28,7 @@
       text-align: center;
       font-size: 20px;
       padding: px;
-      width: 350px;
+      width: 300px;
       transition: all 0.5s;
       cursor: pointer;
       margin: 5px;
@@ -86,6 +86,9 @@
                 Home
               </a>
               <a href="{{ url('/proposal/create') }}" class="nav-link active " style="font-size:15px; color:;">Add Proposal<span class="sr-only">(current)</span></a>
+
+              <a href=" {{ url ('/draft')}}" class=" " style="font-size:15px; color:;">View your Proposal<span class="sr-only">(current)</span></a>
+
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                   <span class="navbar-toggler-icon"></span>
               </button>

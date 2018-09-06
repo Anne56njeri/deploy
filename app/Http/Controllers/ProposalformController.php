@@ -52,6 +52,7 @@ public function index_album($proposalformID = null)
       $proposalforms->date = strtotime($format);
       $proposalforms->Proposal = $request->input('Proposal');
       $proposalforms->number = $request->input('number');
+      $proposalforms->Status=$request->input('status');
       $proposalforms->save();
       return redirect('/home')->with('success', 'Information has been added');
     }
@@ -90,18 +91,17 @@ public function index_album($proposalformID = null)
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update( $id ,Request $request)
     {
-        //
-        $proposalform=proposalform::find($id);
-        $proposalform->name = $request->get('name');
-        $date=date_create($request->get('date'));
-        $format=date_format($date,"Y-m-d");
-        $proposalform->date = strtotime($format);
-        $proposalform->Proposal = $request->get('Proposal');
-        $proposalform->number = $request->get('number');
-        $proposalform->save();
-        return redirect('proposal');
+       $proposalform=proposalform::find($id);
+       $proposalform->Status=$request->get('status');
+       $proposalform->save();
+       return redirect('/admin')->with('success', 'Information has been added');
+
+
+
+
+
 
     }
 

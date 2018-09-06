@@ -59,11 +59,11 @@
                       {{ $proposalform->date }}
                   </div>
                   <div class="" style="float:left;">
-                <a class="btn btn-primary" href="{{ url('/proposal') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ url('/stage') }}"> Back</a>
 
                   </div>
                   <div class=" " style="float:right;">
-                <a class="btn btn-primary" href="{{url ('/stage') }}"> Move to stage one</a>
+                <a class="btn btn-primary" href="{{ route('proposal.edit',$proposalform->id)}}"> Move to stage one</a>
             </div>
                 </div>
 

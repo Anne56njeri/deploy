@@ -52,7 +52,6 @@ body {
 a {
     text-decoration: none;
     color: #3498db;
-    font-size:15px;
 }
     a:hover {
         color: #2980b9;
@@ -353,8 +352,8 @@ h2 {
           @yield('content')
       </main>
 <div class="jumbotron" style="background-image:url(/images/front.jpg);height:400px;background-repeat: no-repeat;background-position:center ;  background-size: cover;">
-  <center><h2  style="color:white;font-size:30px;">Proposal Management System</h2></center>
-<center><button class="button" style=""><span>StageTwo</span></button><center>
+  <center><h2  style="color:white;">Proposal Management System</h2></center>
+<center><button class="button" style=""><span>StageOne</span></button><center>
 </div>
 <div class="container">
     <div class="row ">
@@ -390,8 +389,8 @@ h2 {
       </tr>
     </thead>
     <tbody>
-
 @foreach($proposalform as $proposal)
+
 
       <tr>
         <td>{{$proposal->id}}</td>
@@ -402,7 +401,7 @@ h2 {
         <td>{{$proposal->Proposal}}</td>
 
         <td>
-        <a href="{{ route('proposal.edit',$proposal->id)}} " class="btn btn-warning">Accept</a>
+        <a href="{{ route('proposal.edit',$proposal->id)}} " class="btn btn-warning">Move to Stage Two</a>
         </td>
         <td>
             <form action="{{route ('proposal.destroy',$proposal->id)}} " method="post">
@@ -415,6 +414,7 @@ h2 {
 @endforeach
       </tbody>
     </table>
+
 
 </div>
 </body>
