@@ -29,7 +29,14 @@
             <div class="col-md-12"></div>
             <div class="form-group col-md-4">
               <label for="name">Status:</label>
-              <input type="text" class="form-control" name="status" value="{{$proposalform->Status}}">
+
+              <select name="status">
+    <option value="Draft">Draft</option>
+    <option value="Submit">Submit</option>
+    <option value="StageOne" selected>StageOne</option>
+    <option value="StageTwo">StageTwo</option>
+    <option value="StageTwo">Accepted</option>
+  </select>
             </div>
           </div>
           <div class="row">
