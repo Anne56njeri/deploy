@@ -1,6 +1,86 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-@section('content')
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>One Love</title>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
+    .button {
+      border-radius: 2px;
+      background-color:transparent;
+      border: 2px solid yellowgreen;
+      color: white;
+      text-align: center;
+      font-size: 20px;
+      padding: px;
+      width: 300px;
+      transition: all 0.5s;
+      cursor: pointer;
+      margin: 5px;
+
+    }
+
+    .button span {
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      transition: 0.5s;
+    }
+
+    .button span:after {
+      content: '\00bb';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -20px;
+      transition: 0.5s;
+    }
+
+    .button:hover span {
+      padding-right: 25px;
+    }
+
+    .button:hover span:after {
+      opacity: 1;
+      right: 0;
+      .
+    }
+    .active{
+      background-color: grey;
+  	color: #fff;
+    }
+    .one {
+      border-bottom: 4px solid steelblue ;
+      padding:4px;
+
+    }
+    .image{
+     border: 1px solid #ddd;
+     border-radius: 2spx;
+     padding: 12px;
+      box-shadow: 5px 5px grey;
+     width: ;
+   }
+    </style>
+</head>
+<body>
+
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -68,4 +148,5 @@
         </div>
     </div>
 </div>
-@endsection
+</body>
+</html>
