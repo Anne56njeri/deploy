@@ -47,11 +47,16 @@ public function index_album($proposalformID = null)
 
       $proposalforms = new proposalform;
       $proposalforms->name = $request->input('name');
-      $date=date_create($request->input('date'));
-      $format=date_format($date,"Y-m-d");
-      $proposalforms->date = strtotime($format);
-      $proposalforms->Proposal = $request->input('Proposal');
-      $proposalforms->number = $request->input('number');
+      $proposalforms->organization=$request->input('organization');
+      $proposalforms->address=$request->input('address');
+      $proposalforms->phone=$request->input('phone');
+      $proposalforms->email=$request->input('email');
+      $proposalforms->submitted_by=$request->input('submitted_by');
+      $proposalforms->title=$request->input('title');
+      $proposalforms->summary=$request->input('summary');
+      $proposalforms->background=$request->input('background');
+      $proposalforms->activities=$request->input('activities');
+      $proposalforms->budget=$request->input('budget');
       $proposalforms->Status=$request->input('status');
       $proposalforms->save();
       return redirect('/home')->with('success', 'Information has been added');

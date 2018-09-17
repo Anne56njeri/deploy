@@ -47,8 +47,8 @@ Route::get('admin', 'AdminController@admin')
     ->name('admin');
 Route::get('/home', 'HomeController@index')->name('home');
 // route for activating the user
-Route::get('/verify-user/5454', 'Auth\RegisterController@activateUser')->name('activate.user');
+
 
 Auth::routes();
-
+$this->get('/verify-user/{code}', 'Auth\RegisterController@activateUser')->name('activate.user');
 Route::get('/home', 'HomeController@index')->name('home');

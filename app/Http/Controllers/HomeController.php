@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SendMailable;
+
 class HomeController extends Controller
 {
     /**
@@ -15,6 +18,13 @@ class HomeController extends Controller
     {
         $this->middleware('auth');
     }
+    public function mail()
+{
+   $name = 'OneLove';
+   Mail::to('mary.jereh@gmail.com')->send(new SendMailable($name));
+
+   return 'Email was sent';
+}
 
     /**
      * Show the application dashboard.

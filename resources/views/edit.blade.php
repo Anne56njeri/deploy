@@ -35,7 +35,7 @@
     <option value="Submit">Submit</option>
     <option value="StageOne" selected>StageOne</option>
     <option value="StageTwo">StageTwo</option>
-    <option value="StageTwo">Accepted</option>
+    <option value="Accepted">Accepted</option>
   </select>
             </div>
           </div>

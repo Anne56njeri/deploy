@@ -390,8 +390,19 @@ h2 {
                     <article class="card__article">
                         <h2><a href="#">Proposal</a></h2>
 
-                        <p>{{$proposal ->Proposal}}</p>
-                        <p>{{$proposal ->date}}</p>
+                        <p>{{$proposal->name}}</p>
+                        <p>{{$proposal->organization}}</p>
+
+
+                        <p>{{$proposal->address}}</p>
+                        <p>{{$proposal->phone}}</p>
+                        <p>{{$proposal->email}}</p>
+                        <p>{{$proposal->submitted_by}}</p>
+                        <p>{{$proposal->title}}</p>
+                        <p>{{$proposal->summary}}</p>
+                        <p>{{$proposal->background}}</p>
+                        <p>{{$proposal->activities}}</p>
+                        <p>{{$proposal->budget}}</p>
                     </article>
                 </div>
 

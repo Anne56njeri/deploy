@@ -16,9 +16,16 @@ class CreateProposalformsTable extends Migration
         Schema::create('proposalforms', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->integer('date');
-            $table->integer('number');
-            $table->string('Proposal');
+            $table->string('organization');
+            $table->string('address');
+            $table->integer('phone');
+            $table->string('email');
+            $table->string('submitted_by');
+            $table->string('title');
+            $table->string('summary');
+            $table->string('background');
+            $table->string('activities');
+            $table->integer('budget');
             $table->string('Status');
             $table->timestamps();
         });

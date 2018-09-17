@@ -122,7 +122,7 @@
         <div class="row">
           <div class="col-md-4"></div>
           <div class="form-group col-md-4">
-            <label for="Name">Name:</label>
+            <label for="Name">Title:</label>
             <input type="text" class="form-control" name="name">
           </div>
         </div>
@@ -130,22 +130,71 @@
         <div class="row">
           <div class="col-md-4"></div>
             <div class="form-group col-md-4">
-              <label for="Number">Phone Number:</label>
-              <input type="text" class="form-control" name="number">
+              <label for="name">Organization Name:</label>
+              <input type="text" class="form-control" name="organization">
             </div>
           </div>
           <div class="row">
             <div class="col-md-4"></div>
               <div class="form-group col-md-4">
-                <label for="Number">Proposal:</label>
-                <input type="text" class="form-control" name="Proposal">
+                <label for="address">Address:</label>
+                <input type="text" class="form-control" name="address">
               </div>
             </div>
         <div class="row">
           <div class="col-md-4"></div>
           <div class="form-group col-md-4">
-            <strong>Date : </strong>
-            <input class="date form-control"  type="date" id="datepicker" name="date">
+              <label for="phone">Phone:</label>
+            <input  type="number" class="form-control" name="phone">
+         </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="form-group col-md-4">
+              <label for="email">Email:</label>
+            <input  type="text" class="form-control" name="email">
+         </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="form-group col-md-4">
+              <label for="submitted_by">Submitted_by:</label>
+            <input  type="text" class="form-control" name="submitted_by">
+         </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="form-group col-md-4">
+              <label for="title">Title:</label>
+            <input  type="text" class="form-control" name="title">
+         </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="form-group col-md-4">
+              <label for="summary">Summary:</label>
+            <input  type="text" class="form-control" name="summary">
+         </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="form-group col-md-4">
+              <label for="address">Background:</label>
+            <input  type="text" class="form-control" name="background">
+         </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="form-group col-md-4">
+              <label for="address">Activities:</label>
+            <input  type="text" class="form-control" name="activities">
+         </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="form-group col-md-4">
+              <label for="address">Budget:</label>
+            <input  type="number" class="form-control" name="budget">
          </div>
         </div>
          <div class="row">

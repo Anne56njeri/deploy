@@ -46,17 +46,45 @@
 
                 <div class="card-body">
                   <div class="form-group">
-                      <strong>Phone Number:</strong>
-                      {{ $proposalform->number }}
+                      <strong>Organization:</strong>
+                      {{ $proposalform->organization }}
                   </div>
                   <div class="form-group">
-                      <strong>Proposal:</strong>
-                      {{ $proposalform->Proposal }}
+                      <strong>Address:</strong>
+                      {{ $proposalform->address }}
                   </div>
 
                   <div class="form-group">
-                      <strong>Date:</strong>
-                      {{ $proposalform->date }}
+                      <strong>Phone</strong>
+                      {{ $proposalform->phone }}
+                  </div>
+                  <div class="form-group">
+                      <strong>Email</strong>
+                      {{ $proposalform->email}}
+                  </div>
+                  <div class="form-group">
+                      <strong>Submitted_by</strong>
+                      {{ $proposalform->submitted_by }}
+                  </div>
+                  <div class="form-group">
+                      <strong>title</strong>
+                      {{ $proposalform->title }}
+                  </div>
+                  <div class="form-group">
+                      <strong>Summary</strong>
+                      {{ $proposalform->summary }}
+                  </div>
+                  <div class="form-group">
+                      <strong>Background</strong>
+                      {{ $proposalform->background }}
+                  </div>
+                  <div class="form-group">
+                      <strong>Activities</strong>
+                      {{ $proposalform->activities }}
+                  </div>
+                  <div class="form-group">
+                      <strong>Budget</strong>
+                      {{ $proposalform->budget }}
                   </div>
                   <div class="" style="float:left;">
                 <a class="btn btn-primary" href="{{ url('/stage') }}"> Back</a>

@@ -379,12 +379,19 @@ h2 {
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>ID</th>
         <th>Name</th>
-        <th>Date</th>
+        <th>Organization Name</th>
+        <th>Address</th>
 
-        <th>Phone Number</th>
-        <th>Proposal</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Submitted By</th>
+        <th>Title</th>
+        <th>Summary</th>
+        <th>Background</th>
+        <th>Activities</th>
+        <th>Budget</th>
+
         <th colspan="2">Action</th>
       </tr>
     </thead>
@@ -393,12 +400,20 @@ h2 {
 
 
       <tr>
-        <td>{{$proposal->id}}</td>
         <td>{{$proposal->name}}</td>
+        <td>{{$proposal->organization}}</td>
 
 
-        <td>{{$proposal->number}}</td>
-        <td>{{$proposal->Proposal}}</td>
+        <td>{{$proposal->address}}</td>
+        <td>{{$proposal->phone}}</td>
+        <td>{{$proposal->email}}</td>
+        <td>{{$proposal->submitted_by}}</td>
+        <td>{{$proposal->title}}</td>
+        <td>{{$proposal->summary}}</td>
+        <td>{{$proposal->background}}</td>
+        <td>{{$proposal->activities}}</td>
+        <td>{{$proposal->budget}}</td>
+
 
         <td>
         <a href="{{ route('proposal.edit',$proposal->id)}} " class="btn btn-warning">Move to Stage Two</a>
